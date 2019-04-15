@@ -6,7 +6,7 @@ File: `algorithmia.json`
 
 ```
 {
-	"apiKey": "simViwYourCredentialHKTOFRW2"
+	"apiKey": "..."
 }
 ```
 
@@ -22,5 +22,16 @@ File: `watson-nlu.json`
   "iam_role_crn": "...",
   "iam_serviceid_crn": "...",
   "url": "..."
+}
+```
+
+## Google Images Search
+
+File: `google-search.json`
+
+```
+{
+	"apiKey": "...",
+	"searchEngineId": "..."
 }
 ```
