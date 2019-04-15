@@ -67,3 +67,5 @@ credentials/*.json
 *.swp
 *.swo
 
+# content
+content.json
