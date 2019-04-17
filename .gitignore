@@ -67,5 +67,9 @@ credentials/*.json
 *.swp
 *.swo
 
-# content
+# data structure
 content.json
+
+# contents
+content/*.png
+content/*.jpg
