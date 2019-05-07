@@ -6,10 +6,11 @@ const state = require('./state.js')
 const fs = require('fs')
 
 async function robot(){
+	console.log('> [youtube-robot] Starting...')
 	const content = state.load()
 
 	await authenticateWithOAuth()
-	//const videoInformation = await uploadVideo(content)
+	const videoInformation = await uploadVideo(content)
 	await uploadThumbnail(videoInformation)
 
 	async function authenticateWithOAuth(){
@@ -27,7 +28,7 @@ async function robot(){
 				const app = express()
 
 				const server = app.listen(port, () => {
-					console.log(`> Listening on http://localhost:${port}`)
+					console.log(`> [youtube-robot] Listening on http://localhost:${port}`)
 
 					resolve({
 						app, 
@@ -78,7 +79,7 @@ async function robot(){
 						return reject(error)
 					}
 
-					console.log('> Access tokens received:')
+					console.log('> [youtube-robot] Access tokens received!')
 					console.log(tokens)
 
 					OAuthClient.setCredentials(tokens)
@@ -129,6 +130,7 @@ async function robot(){
 			}
 		}
 
+		console.log('> [youtube-robot] Starting to upload the video to YouTube')
 		const youtubeResponse = await youtube.videos.insert(requestParameters, {
 			onUploadProgress: onUploadProgress
 		})
